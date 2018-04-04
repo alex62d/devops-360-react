@@ -4,7 +4,6 @@ pipeline:
         image: node:alpine
         commands:
             - yarn
-
         test:
             image: node:alpine
             commands:
