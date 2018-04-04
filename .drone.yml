@@ -1,11 +1,11 @@
 ---
 pipeline:
-notify:
-    image: plugins/slack
-    webhook: {slack_webhook}
-    channel: tp117
-    username: drone
-    secrets: [ slack_webhook ]
+    notify:
+        image: plugins/slack
+        webhook: {slack_webhook}
+        channel: tp117
+        username: drone
+        secrets: [ slack_webhook ]
 
     build:
         image: node:alpine
