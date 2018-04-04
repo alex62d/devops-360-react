@@ -1,12 +1,5 @@
 ---
 pipeline:
-    notify:
-        image: plugins/slack
-        webhook: {slack_webhook}
-        channel: tp117
-        username: drone
-        secrets: [ slack_webhook ]
-
     build:
         image: node:alpine
         commands:
@@ -16,6 +9,22 @@ pipeline:
         image: node:alpine
         commands:
             - yarn test
+
+    pre-release:
+        image: node:alpine
+        commands:
+            - yarn build
+            - tar -xcvf build.tar.gz -C build .
+        when:
+            event: tag
+
+    release:
+        image: plugins/github-release
+        api_key: {github_token}
+        files: build.tar.gz
+        secrets: [ github_token ]
+        when:
+            event: tag
 
     notify:
         image: plugins/slack
