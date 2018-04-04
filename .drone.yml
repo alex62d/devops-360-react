@@ -14,7 +14,7 @@ pipeline:
         image: node:alpine
         commands:
             - yarn build
-            - tar -xcvf build.tar.gz -C build .
+            - tar -zcvf build.tar.gz -C build .
         when:
             event: tag
 
