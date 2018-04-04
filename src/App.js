@@ -7,7 +7,7 @@ import GoGear from 'react-icons/lib/go/gear'
 const palettes = {
   // From https://coolors.co/app/52489c-ef476f-ffd166-86bbd8-06d6a0
   "set_1": [
-    "rgba(207, 255, 179, 1)",:
+    "rgba(207, 255, 179, 1)",
     "rgba(173, 226, 93, 1)",
     "rgba(253, 196, 41, 1)",
     "rgba(59, 112, 128, 1)",
